@@ -5,8 +5,11 @@ import './index.css';
 import { TooltipProvider } from './components/ui/tooltip';
 import { AppRouter } from './routes/app-router';
 import { Toaster } from 'sonner';
+import { envs } from './commons/envs';
 
 const queryClient = new QueryClient();
+
+if (envs.PRODUCTION != 'true') console.log(`Ambiente de Desarrollo`);
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

@@ -2,14 +2,25 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { useLoginMutation } from '@/services/auth/auth.mutation';
+import { useState } from 'react';
 
 export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRef<'div'>) {
+  const [user, setUser] = useState('');
+  const [password, setPassword] = useState('');
+  const loginMutation = useLoginMutation();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    loginMutation.mutate({ user, password });
+  };
+
   return (
     <div
       className={cn('bg-white rounded-lg border border-slate-200 shadow-sm p-8', className)}
       {...props}
     >
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="flex flex-col gap-6">
           <div className="flex flex-col items-center gap-2">
             <img src="/src/assets/logo.png" alt="ASISERVY Logo" className="h-20 w-auto" />
@@ -22,15 +33,29 @@ export function LoginForm({ className, ...props }: React.ComponentPropsWithoutRe
           </div>
           <div className="flex flex-col gap-6">
             <div className="grid gap-2">
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" placeholder="user@asiservy.com" required />
+              <Label htmlFor="email">Usuario</Label>
+              <Input
+                id="email"
+                type="text"
+                placeholder="admin"
+                value={user}
+                onChange={(e) => setUser(e.target.value)}
+                required
+              />
             </div>
             <div className="grid gap-2">
               <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" placeholder="••••••••" required />
+              <Input
+                id="password"
+                type="password"
+                placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
             </div>
-            <Button type="submit" className="w-full">
-              Login
+            <Button type="submit" className="w-full" disabled={loginMutation.isPending}>
+              {loginMutation.isPending ? 'Iniciando sesión...' : 'Login'}
             </Button>
           </div>
           <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">

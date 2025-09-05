@@ -1,32 +1,38 @@
-import { envs } from '@/commons/envs';
-import type { Auth } from '@/interfaces/parametros/usuarios/auth.interface';
-import { networkClient } from '@/providers/restClient';
-import { authStore, usuarioStore } from '@/store/parametros/usuario.store';
-import Cookies from 'js-cookie';
+import { authStore } from '@/store/usuario.store';
+import type { Login } from '@/interfaces/auth/auth.interface';
 
-export const loginService = async (payload: { codigo: string; clave: string }): Promise<string> => {
-  const response = await networkClient.post<Auth>(
-    envs.COAC_SERVERS + 'api/auth/loginUser',
-    payload,
-  );
+export const loginService = async (
+  credentials: Login,
+): Promise<{ success: boolean; message: string; user?: string }> => {
+  // Validación manual de credenciales
+  const validCredentials = {
+    user: 'admin',
+    password: 'admin',
+  };
 
-  if (!response || !response.user || !response.token) throw new Error('Credenciales invalidas');
+  // Simular delay de autenticación
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  Cookies.set('auth_token', response.token, {
-    secure: envs.PRODUCTION === 'true',
-    sameSite: 'lax',
-    expires: 1,
-  });
+  if (
+    credentials.user === validCredentials.user &&
+    credentials.password === validCredentials.password
+  ) {
+    // Login exitoso
+    authStore.setState((prev) => ({
+      ...prev,
+      autenticado: true,
+    }));
 
-  usuarioStore.setState((prev) => ({
-    ...prev,
-    usuario: response.user,
-  }));
-
-  authStore.setState((prev) => ({
-    ...prev,
-    autenticado: true,
-  }));
-
-  return response.user.nombre;
+    return {
+      success: true,
+      message: 'Login exitoso',
+      user: 'Admin User',
+    };
+  } else {
+    // Login fallido
+    return {
+      success: false,
+      message: 'Credenciales incorrectas',
+    };
+  }
 };

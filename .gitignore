@@ -45,9 +45,6 @@ dist-ssr/
 yarn.lock
 .lock
 
-# Optional: VSCode project-wide config (you had this, 👍)
-.vscode/*
-
 # Ignore lockfiles (if you're not using npm)
 package-lock.json
 pnpm-lock.yaml
