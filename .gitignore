@@ -7,18 +7,50 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dependency directories
+node_modules/
+.pnp/
+.pnp.js
+
+# Vite output
+dist/
+dist-ssr/
 *.local
 
-# Editor directories and files
-.vscode/*
+# Editor-specific files
+.vscode/
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
-*.suo
+.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Env files
+.env
+.env.*.local
+.env.local
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional: Yarn v3 Plug'n'Play
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+yarn.lock
+.lock
+
+# Optional: VSCode project-wide config (you had this, 👍)
+.vscode/*
+
+# Ignore lockfiles (if you're not using npm)
+package-lock.json
+pnpm-lock.yaml
+
+# Ignore coverage if using Jest or Vitest
+coverage/
