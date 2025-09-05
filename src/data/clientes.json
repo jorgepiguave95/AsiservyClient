@@ -1,0 +1,162 @@
+[
+    {
+        "id": "1f3d6a23-4b3e-4d7b-912a-91a1e6b5d111",
+        "firstName": "Carlos",
+        "lastName": "Mendoza",
+        "email": "carlos.mendoza@example.com",
+        "phone": "+593987654321",
+        "estaActivo": true
+    },
+    {
+        "id": "2c7d9a88-5e2f-40c4-9d8a-64a9c66f2001",
+        "firstName": "Ana",
+        "lastName": "Torres",
+        "email": "ana.torres@example.com",
+        "phone": "+593984112233",
+        "estaActivo": false
+    },
+    {
+        "id": "3a4b2c11-7d6a-41a2-9f8d-87b2fcd1f002",
+        "firstName": "Luis",
+        "lastName": "Vega",
+        "email": "luis.vega@example.com",
+        "phone": "+593981234567",
+        "estaActivo": true
+    },
+    {
+        "id": "4e8d1a45-2b6d-44ef-812b-93f7c77a3003",
+        "firstName": "María",
+        "lastName": "López",
+        "email": "maria.lopez@example.com",
+        "phone": "+593983456789",
+        "estaActivo": true
+    },
+    {
+        "id": "5f1a6d92-8a3c-4c2b-9b1f-22d8c55b4004",
+        "firstName": "José",
+        "lastName": "Ramírez",
+        "email": "jose.ramirez@example.com",
+        "phone": "+593982233445",
+        "estaActivo": false
+    },
+    {
+        "id": "6c9b3d54-3f5a-4b9f-8431-74e5c88d5005",
+        "firstName": "Paola",
+        "lastName": "Morales",
+        "email": "paola.morales@example.com",
+        "phone": "+593981122334",
+        "estaActivo": true
+    },
+    {
+        "id": "7a1c8f76-6b2a-4c4e-9d98-88f1e99a6006",
+        "firstName": "Andrés",
+        "lastName": "Castillo",
+        "email": "andres.castillo@example.com",
+        "phone": "+593984556677",
+        "estaActivo": false
+    },
+    {
+        "id": "8f2d4e23-1c5a-43a9-9021-77d1b22f7007",
+        "firstName": "Valeria",
+        "lastName": "Suárez",
+        "email": "valeria.suarez@example.com",
+        "phone": "+593981234890",
+        "estaActivo": true
+    },
+    {
+        "id": "9e4b7d33-2c7d-41a8-9f3a-54c8d11a8008",
+        "firstName": "Fernando",
+        "lastName": "García",
+        "email": "fernando.garcia@example.com",
+        "phone": "+593989876543",
+        "estaActivo": true
+    },
+    {
+        "id": "10c8f5a1-4b9c-44f1-92e7-88f6d12b9009",
+        "firstName": "Lucía",
+        "lastName": "Martínez",
+        "email": "lucia.martinez@example.com",
+        "phone": "+593983212345",
+        "estaActivo": false
+    },
+    {
+        "id": "11a2b4c5-6d7e-48a1-93f1-22f3c13a9010",
+        "firstName": "Gabriel",
+        "lastName": "Pérez",
+        "email": "gabriel.perez@example.com",
+        "phone": "+593982198765",
+        "estaActivo": true
+    },
+    {
+        "id": "12d9e3f4-7c6a-4a9e-841f-11a2e14b1011",
+        "firstName": "Claudia",
+        "lastName": "Ortega",
+        "email": "claudia.ortega@example.com",
+        "phone": "+593981123987",
+        "estaActivo": false
+    },
+    {
+        "id": "13b5a7d8-1f2c-48a9-95f2-33b4c15c2012",
+        "firstName": "Javier",
+        "lastName": "Navarro",
+        "email": "javier.navarro@example.com",
+        "phone": "+593987651234",
+        "estaActivo": true
+    },
+    {
+        "id": "14c7e9f1-2b3d-45c1-912f-77d5c16d3013",
+        "firstName": "Diana",
+        "lastName": "Salazar",
+        "email": "diana.salazar@example.com",
+        "phone": "+593981998877",
+        "estaActivo": true
+    },
+    {
+        "id": "15f6a4c3-8e7a-45e1-9b5c-66f4d17e4014",
+        "firstName": "Esteban",
+        "lastName": "Mejía",
+        "email": "esteban.mejia@example.com",
+        "phone": "+593982334556",
+        "estaActivo": false
+    },
+    {
+        "id": "16a8c2d9-3b4f-48a2-93f9-11f7c18f5015",
+        "firstName": "Rosa",
+        "lastName": "Almeida",
+        "email": "rosa.almeida@example.com",
+        "phone": "+593981122567",
+        "estaActivo": true
+    },
+    {
+        "id": "17d9b1a2-4c5d-45a1-9f1e-88f2e19g6016",
+        "firstName": "Cristian",
+        "lastName": "Mora",
+        "email": "cristian.mora@example.com",
+        "phone": "+593983478901",
+        "estaActivo": true
+    },
+    {
+        "id": "18b2c3d4-6f7e-44a1-92f3-22c9d20h7017",
+        "firstName": "Elena",
+        "lastName": "Serrano",
+        "email": "elena.serrano@example.com",
+        "phone": "+593982120987",
+        "estaActivo": false
+    },
+    {
+        "id": "19c3d4e5-8a9b-47a1-95f6-77e2f21i8018",
+        "firstName": "Hugo",
+        "lastName": "Jiménez",
+        "email": "hugo.jimenez@example.com",
+        "phone": "+593981567890",
+        "estaActivo": true
+    },
+    {
+        "id": "20d4e5f6-9b1c-40a1-98f7-66f8g22j9019",
+        "firstName": "Natalia",
+        "lastName": "Bravo",
+        "email": "natalia.bravo@example.com",
+        "phone": "+593989001122",
+        "estaActivo": true
+    }
+]
