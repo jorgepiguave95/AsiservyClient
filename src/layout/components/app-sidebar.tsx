@@ -1,7 +1,14 @@
 'use client';
 
 import * as React from 'react';
-import { Frame, PieChart } from 'lucide-react';
+import {
+  CalendarPlus,
+  FileChartColumn,
+  FileUser,
+  SlidersHorizontal,
+  UserCogIcon,
+  Users,
+} from 'lucide-react';
 
 import { NavProjects } from '@/layout/components/nav-projects';
 import { NavUser } from '@/layout/components/nav-user';
@@ -21,39 +28,34 @@ const data = {
   },
   menu: [
     {
-      name: 'Design Engineering',
-      icon: Frame,
+      name: 'Clientes',
+      icon: Users,
       items: [
         {
-          name: 'UI Components',
-          url: '/components',
-          icon: Frame,
+          name: 'Gestionar Clientes',
+          url: '/GestionarClientes',
+          icon: UserCogIcon,
         },
         {
-          name: 'Design System',
-          url: '/design-system',
-          icon: Frame,
-        },
-        {
-          name: 'Figma Files',
-          url: '/figma',
-          icon: Frame,
+          name: 'Reporte Clientes',
+          url: '/ReporteClientes',
+          icon: FileUser,
         },
       ],
     },
     {
-      name: 'Sales & Marketing',
-      icon: PieChart,
+      name: 'Gestion de Producto',
+      icon: SlidersHorizontal,
       items: [
         {
-          name: 'Analytics',
-          url: '/analytics',
-          icon: PieChart,
+          name: 'Control de Producto',
+          url: '/ControlProducto',
+          icon: CalendarPlus,
         },
         {
-          name: 'Campaigns',
-          url: '/campaigns',
-          icon: PieChart,
+          name: 'Reporte de Control',
+          url: '/ReporteControl',
+          icon: FileChartColumn,
         },
       ],
     },

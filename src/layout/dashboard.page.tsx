@@ -1,4 +1,4 @@
-import { Outlet } from '@tanstack/react-router';
+import { Link, Outlet, useRouterState } from '@tanstack/react-router';
 import { SidebarProvider, SidebarInset, SidebarTrigger } from '@/components/ui/sidebar';
 import {
   Breadcrumb,
@@ -10,8 +10,18 @@ import {
 } from '@/components/ui/breadcrumb';
 import { Separator } from '@/components/ui/separator';
 import { AppSidebar } from './components/app-sidebar';
+import { Button } from '@/components/ui/button';
+import { HomeIcon } from 'lucide-react';
 
 export default function Dashboard() {
+  const routerState = useRouterState();
+
+  const getCurrentRoute = () => {
+    const path = routerState.location.pathname;
+    if (path === '/home' || path === '/') return 'Home';
+    return path.slice(1).charAt(0).toUpperCase() + path.slice(2);
+  };
+
   return (
     <>
       <SidebarProvider>
@@ -20,11 +30,11 @@ export default function Dashboard() {
           <header className="flex h-10 items-center justify-between">
             <div className="flex items-center">
               <SidebarTrigger className="h-10 w-12" />
-              {/* <Button variant="outline" className="bg-transparent shadow-none border-none">
+              <Button variant="outline" className="bg-transparent shadow-none border-none">
                 <Link to="/home">
                   <HomeIcon />
                 </Link>
-              </Button> */}
+              </Button>
               <Separator orientation="vertical" className="mr-2 h-4" />
               <Breadcrumb>
                 <BreadcrumbList>
@@ -33,7 +43,7 @@ export default function Dashboard() {
                   </BreadcrumbItem>
                   <BreadcrumbSeparator className="hidden md:block" />
                   <BreadcrumbItem>
-                    <BreadcrumbPage>{'Item'}</BreadcrumbPage>
+                    <BreadcrumbPage>{getCurrentRoute()}</BreadcrumbPage>
                   </BreadcrumbItem>
                 </BreadcrumbList>
               </Breadcrumb>

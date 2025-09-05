@@ -1,11 +1,5 @@
 import { lazy } from 'react';
-import {
-  createRootRoute,
-  createRoute,
-  createRouter,
-  Navigate,
-  Outlet,
-} from '@tanstack/react-router';
+import { createRootRoute, createRoute, createRouter, Outlet } from '@tanstack/react-router';
 import { componentMap } from './generate-routes';
 
 // Crear la ruta raíz
@@ -20,7 +14,7 @@ const loginRoute = createRoute({
   component: lazy(() => import('@/layout/auth.page')),
 });
 
-// Ruta principal del dashboard
+// Ruta principal del dashboard (redirige a /home)
 const dashboardRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/',
@@ -42,14 +36,14 @@ const dynamicRoutes = Object.keys(componentMap)
 const homeRoute = createRoute({
   getParentRoute: () => dashboardRoute,
   path: '/home',
-  component: lazy(() => import('@/pages/home.page')),
+  component: componentMap['home'],
 });
 
 // Ruta catch-all para redirección
 const notFoundRoute = createRoute({
   getParentRoute: () => dashboardRoute,
   path: '*',
-  component: () => <Navigate to="/home" />,
+  component: componentMap['home'],
 });
 
 // Crear el árbol de rutas
