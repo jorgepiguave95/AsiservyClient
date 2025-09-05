@@ -93,6 +93,12 @@ body {
   button {
     cursor: pointer;
   }
+
+  --sidebar-primary: hsl(240 5.9% 10%);
+
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+
+  --sidebar-ring: hsl(217.2 91.2% 59.8%)
 }
 
 .dark {
@@ -131,6 +137,12 @@ body {
   p {
     color: #fff !important;
   }
+
+  --sidebar-primary: hsl(224.3 76.3% 48%);
+
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+
+  --sidebar-ring: hsl(217.2 91.2% 59.8%)
 }
 
 .theme-default {
@@ -293,4 +305,13 @@ body {
   --sidebar-primary: oklch(0.541 0.281 293.009);
   --sidebar-primary-foreground: oklch(0.969 0.016 293.756);
   --sidebar-ring: oklch(0.541 0.281 293.009);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
