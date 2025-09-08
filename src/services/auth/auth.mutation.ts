@@ -38,6 +38,7 @@ export function useLoginMutation() {
       const message = getErrorMessage(error);
       toast.error(extraerMensaje(message), {
         id: 'login-toast',
+        position: 'top-right',
       });
     },
   });
@@ -63,6 +64,7 @@ export function useLogoutMutation() {
       } else {
         toast.error(data.message, {
           id: 'logout-toast',
+          position: 'top-right',
         });
       }
     },
@@ -70,6 +72,7 @@ export function useLogoutMutation() {
       const message = getErrorMessage(error);
       toast.error(extraerMensaje(message), {
         id: 'logout-toast',
+        position: 'top-right',
       });
     },
   });
