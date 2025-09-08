@@ -29,7 +29,7 @@ export default function GestionClientesPage() {
     <>
       <Dialog open={dialogNuevoCliente} onOpenChange={setDialogNuevoCliente}>
         <DialogContent
-          className="!max-w-3/12 !h-4/12 overflow-auto"
+          className="!max-w-4/12 !h-8/12 overflow-auto"
           onInteractOutside={(e) => e.preventDefault()}
         >
           <h1 className="text-2xl font-bold text-blue-950 dark:text-white mb-0 pb-0 pt-0">

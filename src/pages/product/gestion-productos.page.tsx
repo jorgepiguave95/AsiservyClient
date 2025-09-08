@@ -31,7 +31,7 @@ export default function GestionProductoPage() {
     <>
       <Dialog open={dialogNuevoProducto} onOpenChange={setDialogNuevoProducto}>
         <DialogContent
-          className="!max-w-3/12 !h-6/12 overflow-auto"
+          className="!max-w-4/12 !h-10/12 overflow-auto"
           onInteractOutside={(e) => e.preventDefault()}
         >
           <h1 className="text-2xl font-bold text-blue-950 dark:text-white mb-0 pb-0 pt-0">

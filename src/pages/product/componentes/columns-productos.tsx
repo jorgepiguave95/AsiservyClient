@@ -44,12 +44,12 @@ export const productColumns: ColumnDef<ProductResponseDto>[] = [
   {
     accessorKey: 'pesoDrenado',
     header: 'Peso Drenado',
-    cell: ({ row }) => row.original.pesoDrenado ?? 0,
+    cell: ({ row }) => (row.original.pesoDrenado ?? 0).toFixed(2),
   },
   {
     accessorKey: 'pesoEnvase',
     header: 'Peso Envase',
-    cell: ({ row }) => row.original.pesoEnvase ?? 0,
+    cell: ({ row }) => (row.original.pesoEnvase ?? 0).toFixed(2),
   },
   {
     accessorKey: 'estaActivo',

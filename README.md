@@ -29,6 +29,7 @@ npm install
 
 ### 3. Configurar variables de entorno
 
+Copiar el .env.template y renombrarlo a .env y configurar las variables de entorno
 Asegúrate de que el backend esté ejecutándose en `http://localhost:3000/api/`
 
 ### 4. Ejecutar el proyecto

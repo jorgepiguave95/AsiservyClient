@@ -374,14 +374,18 @@ export default function DetallesProductos({
                 <Weight className="w-3 h-3 text-gray-500" />
                 <div>
                   <span className="text-xs text-gray-500">Peso Drenado</span>
-                  <p className="text-sm font-medium text-gray-700">{producto.pesoDrenado}g</p>
+                  <p className="text-sm font-medium text-gray-700">
+                    {(producto.pesoDrenado ?? 0).toFixed(2)}g
+                  </p>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
                 <Weight className="w-3 h-3 text-gray-500" />
                 <div>
                   <span className="text-xs text-gray-500">Peso Envase</span>
-                  <p className="text-sm font-medium text-gray-700">{producto.pesoEnvase}g</p>
+                  <p className="text-sm font-medium text-gray-700">
+                    {(producto.pesoEnvase ?? 0).toFixed(2)}g
+                  </p>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
@@ -389,7 +393,7 @@ export default function DetallesProductos({
                 <div>
                   <span className="text-xs text-gray-500">Peso Neto</span>
                   <p className="text-sm font-medium text-gray-700">
-                    {(producto.pesoEnvase ?? 0) + (producto.pesoDrenado ?? 0)}g
+                    {((producto.pesoEnvase ?? 0) + (producto.pesoDrenado ?? 0)).toFixed(2)}g
                   </p>
                 </div>
               </div>
@@ -447,7 +451,7 @@ export default function DetallesProductos({
 
       {/* Dialog para Agregar Detalle */}
       <Dialog open={agregarDetalleOpen} onOpenChange={setAgregarDetalleOpen}>
-        <DialogContent className="!max-w-8/12 max-h-10/12 overflow-y-auto">
+        <DialogContent className="!max-w-8/12 max-h-12/12 overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="flex items-center space-x-2">
               <span>Detalle de control de producto</span>
@@ -472,7 +476,7 @@ export default function DetallesProductos({
                     step="0.01"
                     value={pesosFill[index]}
                     onChange={(e) => handlePesoFillChange(index, e.target.value)}
-                    placeholder="Vacío = 0"
+                    placeholder="0.0"
                     className="mt-1"
                   />
                 </div>
@@ -496,7 +500,7 @@ export default function DetallesProductos({
                     step="0.01"
                     value={pesosNeto[index]}
                     onChange={(e) => handlePesoNetoChange(index, e.target.value)}
-                    placeholder="Vacío = 0"
+                    placeholder="0.0"
                     className="mt-1"
                   />
                 </div>
